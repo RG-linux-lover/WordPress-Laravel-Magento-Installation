@@ -4,7 +4,7 @@
 ritik@ritik:~$ sudo apt-get update
 ```
 
-## Step2 - Install apache2 and allow firewall
+## Step2 - Install apache2 and start and enable apache service
 
 ```console
 ritik@ritik:~$ sudo apt-get install apache2 apache2-utils
@@ -19,7 +19,7 @@ ritik@ritik:~$ sudo ufw allow in "Apache"
 ritik@ritik:~$ sudo ufw status
 ```
 
-####To test whether the Apache server is running, open your web browser and enter the following URL in the address bar
+#### To test whether the Apache server is running, open your web browser and enter the following URL in the address bar
 ```bash
 http://server_address
 ```
@@ -48,18 +48,18 @@ ritik@ritik:~$ sudo git clone https://github.com/WordPress/WordPress.git
 
 ```console
 ritik@ritik:~$ sudo mysql -u root -p
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new-password';
-mysql> CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'Password@123';
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'localhost' WITH GRANT OPTION;
-mysql> exit;
+               mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new-password';
+               mysql> CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'Password@123';
+	       mysql> GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'localhost' WITH GRANT OPTION;
+	       mysql> exit;
 ```
 
 ## Step9 - Now Create DataBase for wordpress
 
 ```console
 ritik@ritik:~$ sudo mysql -u wordpress -p
-mysql> CREATE DATABASE wp;
-mysql> exit;
+	       mysql> CREATE DATABASE wp;
+	       mysql> exit;
 ```
 
 ## Step10 - Move sample file to activate it
@@ -93,7 +93,7 @@ ritik@ritik:~$ sudo systemctl restart mysql
 ```
 ![WordPress admin page](https://i2.wp.com/wordpress.org/support/files/2018/10/install-step5_v47.png?ssl=1)
 
-## Set this in WordPress installation
+## You can set below details on your WordPress installation Setup
 
 ```bash
 Site Title = yoursitename
