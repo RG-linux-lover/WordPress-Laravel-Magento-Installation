@@ -54,22 +54,22 @@ ritik@ritik:~$ sudo mysql -u root -p
 	       mysql> exit;
 ```
 
-## Step9 - Now Create DataBase for wordpress
+## Step8 - Now Create DataBase for wordpress
 
 ```console
-ritik@ritik:~$ sudo mysql -u wordpress -p
+ritik@ritik:~$ mysql -u wordpress -p
 	       mysql> CREATE DATABASE wp;
 	       mysql> exit;
 ```
 
-## Step10 - Move sample file to activate it
+## Step9 - Move sample file to activate it
 
 ```console
-ritik@ritik:~$ cd /var/www/html/wordpress
+ritik@ritik:~$ cd /var/www/html/WordPress
 ritik@ritik:~$ sudo mv wp-config-sample.php wp-config.php
 ```
 
-## Step11 - Now set DataBase User, DataBase Name and DataBase Password in wp-config.php file 
+## Step10 - Now set DataBase User, DataBase Name and DataBase Password in wp-config.php file 
 
 ```console
 ritik@ritik:~$ sudo vim wp-config.php
@@ -79,14 +79,14 @@ ritik@ritik:~$ sudo vim wp-config.php
 		  define( 'DB_PASSWORD', 'Password@123' );
 ```
 
-## Step12 - Restart Apache and MySql service
+## Step11 - Restart Apache and MySql service
 
 ```console
 ritik@ritik:~$ sudo systemctl restart apache2
 ritik@ritik:~$ sudo systemctl restart mysql
 ```
 
-## Step13 - Go to Browser and type
+## Step12 - Go to Browser and type
 
 ```bash
    your-machine-ip/wordpress/wp-admin
