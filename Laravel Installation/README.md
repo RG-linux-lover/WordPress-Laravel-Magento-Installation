@@ -49,9 +49,11 @@ ritik@ritik:~$ sudo chmod +x /usr/local/bin/composer
 ```console
 ritik@ritik:~$ cd /var/www/html/
 ritik@ritik:~$ sudo git clone https://github.com/laravel/laravel.git 
+```
 
 or to install particular version [Click here](https://github.com/laravel/laravel/releases)
 
+```console
 ritik@ritik:~$ wget https://github.com/laravel/laravel/archive/refs/tags/v8.6.2.tar.gz
 ```
 
@@ -70,13 +72,7 @@ ritik@ritik:~$ cd /var/www/html/laravel
 ritik@ritik:~$ sudo composer install
 ```
 
-## Step10 -  Again give it permission
-
-```console
-ritik@ritik:~$ sudo chmod -R 775 /var/www/html/laravel/storage
-```
-
-## Step11 - Move .env.example file to .env (It is a environment file to define things such as database connection settings, debug options, application URL, among other items that may vary depending on which environment the application is running.)
+## Step10 - Move .env.example file to .env (It is a environment file to define things such as database connection settings, debug options, application URL, among other items that may vary depending on which environment the application is running.)
  
 :warning: The environment configuration file contains sensitive information about your server, including database credentials and security keys. For that reason, you should never share this file publicly.
 
@@ -84,13 +80,13 @@ ritik@ritik:~$ sudo chmod -R 775 /var/www/html/laravel/storage
 ritik@ritik:~$ sudo mv .env.example .env
 ```
 
-## Step12 - Now generate base64 random number encryption key, which used by the illuminate encrypter service.
+## Step11 - Now generate base64 random number encryption key, which used by the illuminate encrypter service.
 
 ```console
 ritik@ritik:~$ sudo php artisan key:generate 
 ```
 
-## Step13 - Check the app_key get base64 ency. or not and you can also change the APP_NAME with the name of your application and APP_URL to the URL you need to access your Laravel application.
+## Step12 - Check the app_key get base64 ency. or not and you can also change the APP_NAME with the name of your application and APP_URL to the URL you need to access your Laravel application.
 
 ```console
 ritik@ritik:~$ vi .env
@@ -101,7 +97,7 @@ ritik@ritik:~$ vi .env
 		APP_URL=http://localhost
 ```
 
-## Step14 - Create user and database for laravel
+## Step13 - Create user and database for laravel
 
 ```console
 ritik@ritik:~$ sudo mysql -u root -p
@@ -112,7 +108,7 @@ ritik@ritik:~$ sudo mysql -u root -p
 		mysql> exit;
 ```
 
-## Step15 Now edit the .env file and update database settings
+## Step14 Now edit the .env file and update database settings
 
 ```console
 ritik@ritik:~$ sudo vim .env
@@ -124,19 +120,19 @@ ritik@ritik:~$ sudo vim .env
 		        DB_PASSWORD=User@123456
 ```
 
-## Step16 - Move Server.php to index.php
+## Step15 - Move Server.php to index.php
 
 ```console
 ritik@ritik:~$ mv server.php index.php 
 ```
 
-## Step17 - Restart apache service
+## Step16 - Restart apache service
 
 ```console
 ritik@ritik:~$ sudo systemctl restart apache2
 ```
 
-## Step18 - Access the laravel by the url 
+## Step17 - Access the laravel by the url 
 
 ```console
 http://serverip-or-domainname/laravel/

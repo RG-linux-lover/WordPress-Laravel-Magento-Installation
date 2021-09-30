@@ -48,7 +48,7 @@ ritik@ritik:~$ sudo mysql -u root -p
 ritik@ritik:~$ sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mysql php7.4-bcmath php7.4-intl php7.4-soap php7.4-zip php7.4-gd php7.4-json php7.4-curl php7.4-cli php7.4-xml php7.4-xmlrpc php7.4-gmp php7.4-common php7.4-mbstring
 ```
 
-## Step6 -  Install composer (required for managing dependencies, libraries for laravel)
+## Step6 -  Install composer (required for managing dependencies, libraries for Magento application)
 
 ```console
 ritik@ritik:~$ curl -sS https://getcomposer.org/installer | php
