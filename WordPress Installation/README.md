@@ -24,7 +24,7 @@ ritik@ritik:~$ sudo ufw status
 http://server_address
 ```
 
-## Step4 - Now, Install mysql-server and set password for root account
+## Step4 - Now, Install mysql-server and set password for root
 
 ```console
 ritik@ritik:~$ sudo apt-get install mysql-server
