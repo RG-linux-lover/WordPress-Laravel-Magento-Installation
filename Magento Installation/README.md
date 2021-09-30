@@ -81,7 +81,7 @@ ritik@ritik:~$ cd /var/www/html/magento
 ritik@ritik:~$ sudo composer install
 ```
 
-## Step10 - 
+## Step10 - Now run magento application
 
 :information_source: Edit the information to match your requirements and the configuration of your system:
 
