@@ -65,7 +65,7 @@ ritik@ritik:~$ mysql -u wordpress -p
 ## Step9 - Move sample file to activate it
 
 ```console
-ritik@ritik:~$ cd /var/www/html/WordPress
+ritik@ritik:~$ cd /var/www/html/wordpress
 ritik@ritik:~$ sudo mv wp-config-sample.php wp-config.php
 ```
 
