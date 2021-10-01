@@ -60,16 +60,16 @@ ritik@ritik:~$ wget https://github.com/laravel/laravel/archive/refs/tags/v8.6.2.
 ## Step8 -  Give proper permissions
 
 ```console
-ritik@ritik:~$ sudo chgrp -R www-data /var/www/html/
-ritik@ritik:~$ sudo chmod -R 755 /var/www/html/laravel
-ritik@ritik:~$ sudo chmod -R 775 /var/www/html/laravel/storage
+ritik@ritik:~$ sudo chown -R yourusername:yourusername /var/www/html/
+ritik@ritik:~$ chmod -R 755 /var/www/html/laravel
+ritik@ritik:~$ chmod -R 775 /var/www/html/laravel/storage
 ```
 
 ## Step9 - Run composer install to downloads and installs all the libraries and dependencies outlined in laravel dir
 
 ```console
 ritik@ritik:~$ cd /var/www/html/laravel
-ritik@ritik:~$ sudo composer install
+ritik@ritik:~$ composer install
 ```
 
 ## Step10 - Move .env.example file to .env (It is a environment file to define things such as database connection settings, debug options, application URL, among other items that may vary depending on which environment the application is running.)
@@ -77,13 +77,13 @@ ritik@ritik:~$ sudo composer install
 :warning: The environment configuration file contains sensitive information about your server, including database credentials and security keys. For that reason, you should never share this file publicly.
 
 ```console 
-ritik@ritik:~$ sudo mv .env.example .env
+ritik@ritik:~$ mv .env.example .env
 ```
 
 ## Step11 - Now generate base64 random number encryption key, which used by the illuminate encrypter service.
 
 ```console
-ritik@ritik:~$ sudo php artisan key:generate 
+ritik@ritik:~$ php artisan key:generate 
 ```
 
 ## Step12 - Check the app_key get base64 ency. or not and you can also change the APP_NAME with the name of your application and APP_URL to the URL you need to access your Laravel application.
@@ -111,7 +111,7 @@ ritik@ritik:~$ sudo mysql -u root -p
 ## Step14 Now edit the .env file and update database settings
 
 ```console
-ritik@ritik:~$ sudo vim .env
+ritik@ritik:~$ vim .env
 	        	DB_CONNECTION=mysql
 	 	        DB_HOST=127.0.0.1
          		DB_PORT=3306
@@ -137,6 +137,3 @@ ritik@ritik:~$ sudo systemctl restart apache2
 ```console
 http://serverip-or-domainname/laravel/
 ```
-
-
-
