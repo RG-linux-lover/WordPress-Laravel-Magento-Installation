@@ -37,14 +37,22 @@ ritik@ritik:~$ sudo mysql_secure_installation
 ritik@ritik:~$ sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mysql php7.4-curl php7.4-gd php7.4-xml php7.4-mbstring php7.4-xmlrpc php7.4-intl php7.4-soap php7.4-zip
 ```
 
-## Step6 - Download the latest version of the WordPress from GitHub
+## Step6 - Give user permission to html dir
+
+```console
+ritik@ritik:~$ cd /var/www/
+ritik@ritik:~$ sudo chown -R yourusername:yourusername html/
+```
+
+## Step7 - Download the latest version of the WordPress from GitHub
 
 ```console
 ritik@ritik:~$ cd /var/www/html
-ritik@ritik:~$ sudo git clone https://github.com/WordPress/WordPress.git
+ritik@ritik:~$ git clone https://github.com/WordPress/WordPress.git
+ritik@ritik:~$ mv WordPress wordpress
 ```
 
-## Step7 - Create user for wordpress and remember its password and give it permission to create database
+## Step8 - Create user for wordpress and remember its password and give it permission to create database
 
 ```console
 ritik@ritik:~$ sudo mysql -u root -p
@@ -54,7 +62,7 @@ ritik@ritik:~$ sudo mysql -u root -p
 	       mysql> exit;
 ```
 
-## Step8 - Now Create DataBase for wordpress
+## Step9 - Now Create DataBase for wordpress
 
 ```console
 ritik@ritik:~$ mysql -u wordpress -p
@@ -62,31 +70,32 @@ ritik@ritik:~$ mysql -u wordpress -p
 	       mysql> exit;
 ```
 
-## Step9 - Move sample file to activate it
+## Step10 - Move sample file to activate it
 
 ```console
 ritik@ritik:~$ cd /var/www/html/wordpress
-ritik@ritik:~$ sudo mv wp-config-sample.php wp-config.php
+ritik@ritik:~$ mv wp-config-sample.php wp-config.php
 ```
 
-## Step10 - Now set DataBase User, DataBase Name and DataBase Password in wp-config.php file 
+## Step11 - Now set DataBase User, DataBase Name and DataBase Password in wp-config.php file 
 
 ```console
-ritik@ritik:~$ sudo vim wp-config.php
+ritik@ritik:~$ cd /var/www/html/wordpress
+ritik@ritik:~$ vim wp-config.php
                 
                   define( 'DB_NAME', 'wp' );
 		  define( 'DB_USER', 'wordpress' );
 		  define( 'DB_PASSWORD', 'Password@123' );
 ```
 
-## Step11 - Restart Apache and MySql service
+## Step12 - Restart Apache and MySql service
 
 ```console
 ritik@ritik:~$ sudo systemctl restart apache2
 ritik@ritik:~$ sudo systemctl restart mysql
 ```
 
-## Step12 - Go to Browser and type
+## Step13 - Go to Browser and type
 
 ```bash
    your-machine-ip/wordpress/wp-admin
@@ -101,7 +110,3 @@ Username =  your-username
 Password = StrongPassword
 Email = your.email@wordpress.com
 ```
-
-
-
-
